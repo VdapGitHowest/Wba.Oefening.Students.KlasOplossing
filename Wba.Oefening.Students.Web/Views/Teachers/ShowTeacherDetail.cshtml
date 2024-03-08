@@ -1,0 +1,26 @@
+﻿@model TeachersShowTeacherDetailViewModel
+
+@{
+    ViewData["Title"] = Model.TeacherName;
+    Layout = "_LayoutAdmin";
+}
+
+<h1>Teachers Info</h1>
+@* mt-2 ==> margin top 2 *@
+<div class="card mt-2">
+    <div class="card-header bg-info">
+        @Model.TeacherName
+    </div>
+    <div class="card-body bg-light">
+
+        @foreach (var courseName in @Model.CourseNames)
+        {
+            <p>@courseName</p>
+        }
+    </div>
+
+</div>
+
+<a asp-controller="Teachers" asp-action="Showteachers">Back</a>
+
+<partial name="HowestPartialView" model="Model" />

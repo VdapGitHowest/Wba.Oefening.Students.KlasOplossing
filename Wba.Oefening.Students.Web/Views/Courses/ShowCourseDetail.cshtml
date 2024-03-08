@@ -1,0 +1,23 @@
+﻿@model CoursesShowCourseDetailViewModel
+
+@{
+    ViewData["Title"] = Model.Name;
+}
+
+<h1>Course with enrolled students</h1>
+@* mt-2 ==> margin top 2 *@
+<div class="card mt-2">
+    <div class="card-header bg-info">
+        @Model.Name
+    </div>
+    <div class="card-body bg-light">
+
+        @foreach (var student in @Model.CourseStudents)
+        {
+            <p>@student.FirstName  @student.LastName</p>
+        }
+    </div>
+
+</div>
+
+<a asp-controller="Courses" asp-action="ShowCourses">Back</a>

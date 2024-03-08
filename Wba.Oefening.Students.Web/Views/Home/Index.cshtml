@@ -1,0 +1,10 @@
+﻿<div class="text-center">
+    @* <h1 class="display-8">@ViewBag.Title</h1> *@
+    <h2 class="display-2">@ViewBag.Message</h2>
+    <img class="img-fluid" src="~/images/StudentAPP.png" />
+</div>
+
+<div class="bg-warning pl-2">
+    <p class="text-primary text-capitalize font-weight-bold "> App user of the day:   @await Component.InvokeAsync("RandomUser")</p>
+
+</div>

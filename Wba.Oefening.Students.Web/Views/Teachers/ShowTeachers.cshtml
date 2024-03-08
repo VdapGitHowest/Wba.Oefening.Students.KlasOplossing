@@ -1,0 +1,12 @@
+﻿@model TeachersShowTeachersViewModel
+
+<h1>Teachers list</h1>
+
+@foreach(TeachersShowTeacherDetailViewModel teachersShowTeacherDetail in Model.GetTeachers)
+{
+ <p>
+     <a class="btn btn-outline-primary" asp-controller="Teachers" asp-action="ShowTeacherDetail" 
+     asp-route-teacherId=@teachersShowTeacherDetail.TeacherId>@teachersShowTeacherDetail.TeacherName</a>
+ </p>
+ 
+}

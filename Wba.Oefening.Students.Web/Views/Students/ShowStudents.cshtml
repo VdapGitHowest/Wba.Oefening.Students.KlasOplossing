@@ -1,0 +1,17 @@
+﻿@model StudentsShowStudentsViewModel
+@{
+    ViewData["Title"] = "Enrolled Students";
+    
+    }
+    <div class="text center">
+        <h1>Enrolled students</h1>
+    </div>
+
+@foreach (StudentsShowStudentDetailViewModel studentsShowStudentDetailView in Model.Students)
+{
+    <p>
+        <a class="btn btn-outline-primary" asp-controller="Students" asp-action="ShowStudentDetail"
+           asp-route-id=@studentsShowStudentDetailView.Id>@studentsShowStudentDetailView.StudentName</a>
+    </p>
+
+}
